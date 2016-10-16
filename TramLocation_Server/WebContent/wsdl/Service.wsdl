@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mctc.arr.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mctc.arr.com" xmlns:intf="http://mctc.arr.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mctc.arr.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="bustops_logic">
+    <complexType>
+     <sequence>
+      <element name="latlon" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="bustops_logicResponse">
+    <complexType>
+     <sequence>
+      <element name="bustops_logicReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="busroutes">
+    <complexType>
+     <sequence>
+      <element name="bustop" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="busroutesResponse">
+    <complexType>
+     <sequence>
+      <element name="busroutesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="bustops">
+    <complexType>
+     <sequence>
+      <element name="latlon" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="bustopsResponse">
+    <complexType>
+     <sequence>
+      <element name="bustopsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="myroute">
+    <complexType>
+     <sequence>
+      <element name="imei" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="myrouteResponse">
+    <complexType>
+     <sequence>
+      <element name="myrouteReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="update_track">
+    <complexType>
+     <sequence>
+      <element name="imei" type="xsd:string"/>
+      <element name="loc" type="xsd:string"/>
+      <element name="dest" type="xsd:string"/>
+      <element name="nextstops" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="update_trackResponse">
+    <complexType>
+     <sequence>
+      <element name="update_trackReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="track_records">
+    <complexType>
+     <sequence>
+      <element name="busno" type="xsd:string"/>
+      <element name="bustopname" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="track_recordsResponse">
+    <complexType>
+     <sequence>
+      <element name="track_recordsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="track_recordsResponse">
+
+      <wsdl:part element="impl:track_recordsResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="myrouteResponse">
+
+      <wsdl:part element="impl:myrouteResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="busroutesResponse">
+
+      <wsdl:part element="impl:busroutesResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="busroutesRequest">
+
+      <wsdl:part element="impl:busroutes" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="bustops_logicRequest">
+
+      <wsdl:part element="impl:bustops_logic" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="myrouteRequest">
+
+      <wsdl:part element="impl:myroute" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="bustopsRequest">
+
+      <wsdl:part element="impl:bustops" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="track_recordsRequest">
+
+      <wsdl:part element="impl:track_records" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="update_trackResponse">
+
+      <wsdl:part element="impl:update_trackResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="bustops_logicResponse">
+
+      <wsdl:part element="impl:bustops_logicResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="bustopsResponse">
+
+      <wsdl:part element="impl:bustopsResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="update_trackRequest">
+
+      <wsdl:part element="impl:update_track" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Service">
+
+      <wsdl:operation name="bustops_logic">
+
+         <wsdl:input message="impl:bustops_logicRequest" name="bustops_logicRequest"/>
+
+         <wsdl:output message="impl:bustops_logicResponse" name="bustops_logicResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="busroutes">
+
+         <wsdl:input message="impl:busroutesRequest" name="busroutesRequest"/>
+
+         <wsdl:output message="impl:busroutesResponse" name="busroutesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="bustops">
+
+         <wsdl:input message="impl:bustopsRequest" name="bustopsRequest"/>
+
+         <wsdl:output message="impl:bustopsResponse" name="bustopsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="myroute">
+
+         <wsdl:input message="impl:myrouteRequest" name="myrouteRequest"/>
+
+         <wsdl:output message="impl:myrouteResponse" name="myrouteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="update_track">
+
+         <wsdl:input message="impl:update_trackRequest" name="update_trackRequest"/>
+
+         <wsdl:output message="impl:update_trackResponse" name="update_trackResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="track_records">
+
+         <wsdl:input message="impl:track_recordsRequest" name="track_recordsRequest"/>
+
+         <wsdl:output message="impl:track_recordsResponse" name="track_recordsResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiceSoapBinding" type="impl:Service">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="bustops_logic">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="bustops_logicRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="bustops_logicResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="busroutes">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="busroutesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="busroutesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="bustops">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="bustopsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="bustopsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="myroute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="myrouteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="myrouteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="update_track">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="update_trackRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="update_trackResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="track_records">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="track_recordsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="track_recordsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiceService">
+
+      <wsdl:port binding="impl:ServiceSoapBinding" name="Service">
+
+         <wsdlsoap:address location="http://localhost:8080/TramLocation_Server/services/Service"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

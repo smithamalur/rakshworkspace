@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServiceService WSDL service -->
+
+  <service name="Service" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://mctc.arr.com"/>
+      <parameter name="wsdlServiceElement" value="ServiceService"/>
+      <parameter name="schemaQualified" value="http://mctc.arr.com"/>
+      <parameter name="wsdlServicePort" value="Service"/>
+      <parameter name="className" value="com.arr.mctc.Service"/>
+      <parameter name="wsdlPortType" value="Service"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://mctc.arr.com" xmlns:retNS="http://mctc.arr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="bustops_logic" qname="operNS:bustops_logic" returnQName="retNS:bustops_logicReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:latlon" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mctc.arr.com" xmlns:retNS="http://mctc.arr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="busroutes" qname="operNS:busroutes" returnQName="retNS:busroutesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:bustop" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mctc.arr.com" xmlns:retNS="http://mctc.arr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="bustops" qname="operNS:bustops" returnQName="retNS:bustopsReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:latlon" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mctc.arr.com" xmlns:retNS="http://mctc.arr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="myroute" qname="operNS:myroute" returnQName="retNS:myrouteReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:imei" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mctc.arr.com" xmlns:retNS="http://mctc.arr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="update_track" qname="operNS:update_track" returnQName="retNS:update_trackReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:imei" type="tns:string"/>
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:loc" type="tns:string"/>
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:dest" type="tns:string"/>
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nextstops" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://mctc.arr.com" xmlns:retNS="http://mctc.arr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="track_records" qname="operNS:track_records" returnQName="retNS:track_recordsReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:busno" type="tns:string"/>
+        <parameter xmlns:pns="http://mctc.arr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:bustopname" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="busroutes bustops_logic bustops myroute update_track track_records"/>
+
+  </service>
+</deployment>
